@@ -96,4 +96,31 @@ export function uploadfileinoss(params) {
     params
   })
 }
+export function querybusinessbysearch(params) {
+  return request({
+    url: 'querybusinessbysearch',
+    method: 'get',
+    params
+  })
+}
+export function queryjobprovider(params) {
+  return request({
+    url: 'queryjobprovider',
+    method: 'get',
+    params
+  })
+}
+export function submitjob(params) {
+  return request({
+    url: 'submitjob',
+    method: 'post',
+    params
+  })
+}
+export function queryuserposttopic() {
+  return request({
+    url: 'queryuserposttopic',
+    method: 'get'
+  })
+}
 

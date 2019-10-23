@@ -17,6 +17,7 @@
   "dependencies": {
     "ali-oss": "^6.1.1",
     "axios": "0.18.1",
+    "better-scroll": "^1.15.2",
     "element-ui": "^2.7.2",
     "js-cookie": "2.2.0",
     "less-loader": "^5.0.0",
@@ -24,6 +25,7 @@
     "nprogress": "0.2.0",
     "path-to-regexp": "2.4.0",
     "qs": "^6.9.0",
+    "scroll": "^3.0.1",
     "vue": "2.6.10",
     "vue-router": "3.0.6",
     "vuex": "3.1.0"

@@ -1,10 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
-Vue.use(Router)
-
 /* Layout */
 import Layout from '@/layout'
+
+Vue.use(Router)
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -51,41 +50,124 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      meta: { title: '控制面板', icon: 'dashboard' }
     }]
   },
 
   {
-    path: '/example',
+    path: '/partjob',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
+    redirect: '/partjob',
+    name: 'partjob',
+    meta: { title: '兼职管理', icon: 'partjob' },
+    children: [
+      {
+        path: 'partjobProvider',
+        name: 'partjobProvider',
+        component: () => import('@/views/partjob/partjobProvider'),
+        meta: { title: '兼职提供者', icon: 'table' }
+      },
+      {
+        path: 'partjobList',
+        name: 'partjobList',
+        component: () => import('@/views/partjob/partjobList'),
+        meta: { title: '兼职列表2', icon: 'tree' }
+      },
+      {
+        path: 'submitJob',
+        name: 'submitJob',
+        component: () => import('@/views/partjob/submitJob'),
+        meta: { title: '兼职列表', icon: 'tree' }
+      }
+    ]
+  },
+  {
+    path: '/topicOfConversation',
+    component: Layout,
+    redirect: '/topicOfConversation',
+    name: 'topicOfConversation',
+    meta: { title: '社区管理', icon: 'square' },
+    children: [
+      {
+        path: 'topicOfConversation',
+        name: 'topicOfConversation',
+        component: () => import('@/views/topicOfConversation/topicOfConversation'),
+        meta: { title: '帖子管理', icon: 'table' }
+      },
+      {
+        path: '123',
+        name: '123',
+        component: () => import('@/views/topicOfConversation/123'),
+        meta: { title: '话题分类', icon: 'tree' }
+      }
+      // {
+      //   path: 'tree',
+      //   name: 'Tree',
+      //   component: () => import('@/views/tree/index'),
+      //   meta: { title: '主页话题配置', icon: 'tree' }
+      // }
+    ]
+  },
+  {
+    path: '/square',
+    component: Layout,
+    redirect: '/square/table',
+    name: 'Square',
+    meta: { title: '校园活动', icon: 'active' },
     children: [
       {
         path: 'table',
         name: 'Table',
         component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        meta: { title: '活动方案', icon: 'table' }
+      },
+      // {
+      //   path: 'tree',
+      //   name: 'Tree',
+      //   component: () => import('@/views/tree/index'),
+      //   meta: { title: '活动列表', icon: 'tree' }
+      // },
+      {
+        path: 'tree',
+        name: 'Tree',
+        component: () => import('@/views/tree/index'),
+        meta: { title: '添加活动', icon: 'tree' }
+      }
+    ]
+  },
+  {
+    path: '/game',
+    component: Layout,
+    redirect: '/example/game',
+    name: 'Game',
+    meta: { title: '陪玩管理', icon: 'example' },
+    children: [
+      {
+        path: 'table',
+        name: 'Table',
+        component: () => import('@/views/table/index'),
+        meta: { title: '陪玩分类', icon: 'table' }
       },
       {
         path: 'tree',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        meta: { title: '陪玩列表', icon: 'tree' }
       }
     ]
   },
-
   {
     path: '/form',
     component: Layout,
+    redirect: '/example/table',
+    name: 'Example',
+    meta: { title: '广告管理', icon: 'example' },
     children: [
       {
         path: 'index',
         name: 'Form',
         component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
+        meta: { title: '轮播图', icon: 'form' }
       }
     ]
   },
@@ -128,7 +210,7 @@ export const constantRoutes = [
     name: 'shopmanage',
     meta: {
       title: '店铺管理',
-      icon: 'shopmanage'
+      icon: 'nested'
     },
     children: [
       {
@@ -137,6 +219,18 @@ export const constantRoutes = [
         name: 'ShopManage',
         meta: { title: '店铺管理' }
       },
+      // {
+      //   path: '/shopmanage',
+      //   component: () => import('@/views/shopmanage/shopmanage'), // Parent router-view
+      //   name: 'ShopManage',
+      //   meta: { title: '店铺分类配置' }
+      // },
+      // {
+      //   path: '/shopmanage',
+      //   component: () => import('@/views/shopmanage/shopmanage'), // Parent router-view
+      //   name: 'ShopManage',
+      //   meta: { title: '推荐店铺权重' }
+      // },
       {
         path: '/shopList',
         component: () => import('@/views/shopmanage/shopList'), // Parent router-view
@@ -152,7 +246,7 @@ export const constantRoutes = [
     children: [
       {
         path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
+        meta: { title: '用户反馈', icon: 'link' }
       }
     ]
   },

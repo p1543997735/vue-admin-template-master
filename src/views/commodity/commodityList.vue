@@ -188,7 +188,7 @@
         <template slot-scope="scope">
           <span>{{ scope.row.startCount }}</span>
         </template>
-      </el-table-column>s
+      </el-table-column>
       <el-table-column width="100%" align="center" label="是否上架">
         <template slot-scope="scope">
           <el-switch v-model="scope.row.show" active-value-value="1" inactive-value-value="0" @change="changeSwitch(scope.row, scope.row.id, scope.$index)" />
@@ -214,16 +214,23 @@
 </template>
 
 <script>
-import Pagination from '@/components/Pagination'
-import { querycommoditylistbypage, updatetabledatabyid, querycommoditybysearch, querycommoditytastybyid } from '@/api/api'
-import * as Message from 'element-ui'
-import waves from '@/directive/waves' // waves directive
-import elDragDialog from '@/directive/el-drag-dialog' // base on element-ui
-import ImageCropper from '@/components/ImageCropper'
-import PanThumb from '@/components/PanThumb'
-import { queryCommodityShopList, queryCommodityKind, submitCommodity } from '@/api/api'
+    import Pagination from '@/components/Pagination'
+    import {
+        querycommoditybysearch,
+        queryCommodityKind,
+        querycommoditylistbypage,
+        queryCommodityShopList,
+        querycommoditytastybyid,
+        submitCommodity,
+        updatetabledatabyid
+    } from '@/api/api'
+    import * as Message from 'element-ui'
+    import waves from '@/directive/waves' // waves directive
+    import elDragDialog from '@/directive/el-drag-dialog' // base on element-ui
+    import ImageCropper from '@/components/ImageCropper'
+    import PanThumb from '@/components/PanThumb'
 
-export default {
+    export default {
   components: { Pagination, ImageCropper, PanThumb },
   directives: { waves, elDragDialog },
   data() {
