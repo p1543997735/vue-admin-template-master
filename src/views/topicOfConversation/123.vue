@@ -24,9 +24,9 @@
   </div>
 </template>
 <script>
-    import {queryuserposttopic} from '@/api/api'
+import { queryuserposttopic } from '@/api/api'
 
-    let id = 1000
+let id = 1000
 export default {
   data() {
     return {

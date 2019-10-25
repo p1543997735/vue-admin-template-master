@@ -62,16 +62,16 @@ export const constantRoutes = [
     meta: { title: '兼职管理', icon: 'partjob' },
     children: [
       {
-        path: 'partjobProvider',
-        name: 'partjobProvider',
-        component: () => import('@/views/partjob/partjobProvider'),
+        path: 'submitPartJobProvider',
+        name: 'submitPartJobProvider',
+        component: () => import('@/views/partjob/submitPartJobProvider'),
         meta: { title: '兼职提供者', icon: 'table' }
       },
       {
-        path: 'partjobList',
-        name: 'partjobList',
-        component: () => import('@/views/partjob/partjobList'),
-        meta: { title: '兼职列表2', icon: 'tree' }
+        path: 'partjobTable',
+        name: 'partjobTable',
+        component: () => import('@/views/partjob/partjobTable'),
+        meta: { title: '兼职表格', icon: 'tree' }
       },
       {
         path: 'submitJob',
@@ -109,10 +109,10 @@ export const constantRoutes = [
     ]
   },
   {
-    path: '/square',
+    path: '/schoolactivity',
     component: Layout,
-    redirect: '/square/table',
-    name: 'Square',
+    redirect: '/schoolactivity',
+    name: 'schoolactivity',
     meta: { title: '校园活动', icon: 'active' },
     children: [
       {
@@ -121,12 +121,12 @@ export const constantRoutes = [
         component: () => import('@/views/table/index'),
         meta: { title: '活动方案', icon: 'table' }
       },
-      // {
-      //   path: 'tree',
-      //   name: 'Tree',
-      //   component: () => import('@/views/tree/index'),
-      //   meta: { title: '活动列表', icon: 'tree' }
-      // },
+      {
+        path: 'activityList',
+        name: 'activityList',
+        component: () => import('@/views/schoolactivity/activityList'),
+        meta: { title: '活动列表', icon: 'tree' }
+      },
       {
         path: 'tree',
         name: 'Tree',

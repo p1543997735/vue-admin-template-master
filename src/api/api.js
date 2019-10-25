@@ -123,4 +123,39 @@ export function queryuserposttopic() {
     method: 'get'
   })
 }
+export function uploadJobProvider(params) {
+  return request({
+    url: 'submitparttimejobprovider',
+    method: 'post',
+    params
+  })
+}
+export function queryjobkindbyid(params) {
+  return request({
+    url: 'queryjobkindbyid',
+    method: 'get',
+    params
+  })
+}
+export function queryjobprovincebyid(params) {
+  return request({
+    url: 'queryjobprovincebyid',
+    method: 'get',
+    params
+  })
+}
+export function queryappactivitylist(params) {
+  return request({
+    url: 'queryappactivitylist',
+    method: 'get',
+    params
+  })
+}
+export function queryjoblist(params) {
+  return request({
+    url: 'queryjoblist',
+    method: 'get',
+    params
+  })
+}
 

@@ -27,6 +27,7 @@
     "qs": "^6.9.0",
     "scroll": "^3.0.1",
     "vue": "2.6.10",
+    "vue-directive-image-previewer": "^2.2.2",
     "vue-router": "3.0.6",
     "vuex": "3.1.0"
   },

@@ -28,10 +28,10 @@
             </el-form-item>
             <el-form-item label="商户图片">
               <el-upload
-                action="#"
+                action="http://47.98.122.133/JustLikeThis/public/index.php/api/admin/uploadfileinossfile"
                 :on-preview="handlePreview"
                 :on-remove="handleRemove"
-                :http-request="handlePost"
+                :on-success="handleAvatarSuccess"
                 :file-list="fileList"
                 list-type="picture"
               >
@@ -134,7 +134,7 @@
 </template>
 
 <script>
-import { querybusinesslist, deletetablebyId, querybusinessbysearch, updatetabledatabyid, updatebusinesspicture, uploadfileinoss } from '@/api/api'
+import { querybusinesslist, deletetablebyId, querybusinessbysearch, updatetabledatabyid, updatebusinesspicture } from '@/api/api'
 // import request from '@/utils/request'
 import Pagination from '@/components/Pagination'
 import { Message } from 'element-ui'
@@ -184,25 +184,12 @@ export default {
     this.getList()
   },
   methods: {
-    handlePost(file) {
-      // // action="/docmanager/external/upload"
-      // var data = document.getElementById('upload')
-      // const fd = new window.FormData(data)
-      // fd.append('categoryId', 1)
-      // fd.append('tag', 2)
-      // fd.append('description', 3)
-      // fd.append('prefix', 4)
-      // fd.append('file', file)
+    handleAvatarSuccess(res, file) {
+      console.log(file.row)
 
-      // 配置post请求的参数。参数名file,后面跟要传的文件，参数名fileType，值为category（看后端的具体要求）
-      // fd.append('file', file)
-      uploadfileinoss({ img: file }).then(response => {
-        // console.log(1)
-        console.log(this.fileList)
-        console.log(response)
-        // console.log(file)
-      //   // console.log(2)
-      })
+      this.imageUrl = URL.createObjectURL(file.raw)
+      console.log(this.imageUrl)
+      console.log(URL.createObjectURL(file.raw))
     },
     handleRemove(file, fileList) {
       console.log(file, fileList)
